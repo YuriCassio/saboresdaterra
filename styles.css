@@ -81,7 +81,7 @@ header#inicio nav a:first-child {
 
 /* seção de introdução com imagem de fundo e gradiente escuro */
 .fontebranca2{
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url('Sabores da Terra.png');
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url('imagens/Sabores da Terra.png');
     background-size: cover;        
     background-position: center left; 
     min-height: 80vh;              

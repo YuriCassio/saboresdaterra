@@ -1,0 +1,516 @@
+/* define como tamanho de elementos é calculado em toda a página */
+* {
+  box-sizing: border-box;
+}
+
+/* layout principal da página e grid de áreas */
+body {
+  margin: 0;
+  background-color: #f4f7d5;
+  color: #1f2937;
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  grid-template-areas:
+    "header header"
+    "banner banner"
+    "cardapio menu"
+    "footer footer";
+}
+/* variáveis de cor usadas ao longo do site */
+:root {
+  --cor-fundo-escuro: #1f111a;  
+  --cor-fundo-claro: #f5ebe1;
+  --cor-verde-oliva: #5a6642;   
+  --cor-laranja-terra: #c75627;  
+  --cor-texto-claro: #ffffff;   
+}
+
+/* estilo do cabeçalho e navegação principal */
+header#inicio {
+    background-color: var(--cor-fundo-escuro);
+    padding: 20px 5%;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    width: 100%; 
+    position: relative;
+    grid-area: header;
+}
+
+header#inicio h3 {
+    color: var(--cor-texto-claro);
+    font-family: 'Playfair Display', serif; 
+    margin: 0;
+    font-size: 32px;
+    
+}
+
+
+header#inicio nav {
+    display: flex;
+    gap: 20px; 
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+header#inicio nav a {
+    color: var(--cor-texto-claro);
+    text-decoration: none; 
+    font-family: sans-serif;
+    font-size: 14px;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+header#inicio nav a[href="#cardapio"] {
+    border-bottom: 2px solid var(--cor-laranja-terra);
+    padding-bottom: 4px;
+}
+
+/* banner principal da página, com imagem de fundo e texto em destaque */
+section.fontebranca{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 65vh;
+    display: flex;
+    align-items: flex-start;
+    padding: 3rem 5%;
+    padding-top: 5rem;
+    grid-area: banner;
+    position: relative;
+}
+
+section.fontebranca::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.banner-texto {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin-top: 0;
+}
+
+section.fontebranca h1 {
+    color: var(--cor-texto-claro);
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin: 0 0 20px 0;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.75rem;
+}
+
+section.fontebranca h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 72px;
+    height: 5px;
+    background-color: var(--cor-laranja-terra);
+    border-radius: 4px;
+}
+
+section.fontebranca p {
+    color: var(--cor-texto-claro);
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0;
+}
+
+/* área do cardápio com lista de pratos e cards em grade */
+section#cardapio {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    background-color: #f4f7d5;
+    padding: 2rem 2rem 2rem 5%;
+    grid-area: cardapio;
+}
+
+.cardapio-principal {
+    grid-column: 1;
+}
+
+section#menu-ex {
+    background-color: var(--cor-verde-oliva);
+    padding: 2rem;
+    margin: 10rem 5% 0 0;
+    grid-area: menu;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+/* painel lateral de menu executivo e filtros do cardápio */
+.categorias-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.categoria-item {
+    padding: 10px 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.categoria-item.ativo {
+    background-color: var(--cor-verde-oliva);
+    color: var(--cor-texto-claro);
+    border-color: var(--cor-verde-oliva);
+}
+
+/* grade de cards para exibir os pratos do cardápio */
+.grid-cardapio {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* estilo dos cards individuais de prato */
+.card-prato {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card-prato:hover {
+    transform: translateY(-5px);
+}
+
+.imagem-placeholder {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-prato-conteudo {
+    padding: 1.25rem;
+}
+
+.card-prato-conteudo h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    color: #1f2937;
+    line-height: 1.4;
+}
+
+.texto-destaque-verde {
+    color: var(--cor-verde-oliva);
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.card-prato-rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
+
+.texto-destaque-verdeescuro {
+    color: var(--cor-verde-oliva);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.botoesC {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    border: 1px solid;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.blaranja {
+    background-color: #fff3e0;
+    color: var(--cor-laranja-terra);
+    border-color: var(--cor-laranja-terra);
+}
+
+.botoesV {
+    background-color: #e8f5e9;
+    color: var(--cor-verde-oliva);
+    border-color: var(--cor-verde-oliva);
+}
+
+#menu-ex h2 {
+    color: var(--cor-laranja-terra);
+    font-size: 28px;
+    margin: 0 0 5px 0;
+    font-weight: 700;
+}
+
+#menu-ex p {
+    color: var(--cor-texto-claro);
+    font-size: 13px;
+    margin: 0 0 1.5rem 0;
+}
+
+#menu-ex h3 {
+    color: var(--cor-laranja-terra);
+    font-size: 14px;
+    margin: 1.5rem 0 0.5rem 0;
+}
+
+.valor-menu {
+    color: var(--cor-laranja-terra);
+    font-size: 72px;
+    font-weight: 700;
+    margin-top: 2rem;
+    display: block;
+    line-height: 1;
+}
+
+/* rodapé do site com informações de contato e horário */
+footer.fontebranca {
+    background-color: #1f111a;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 1.25rem 4%;
+    color: var(--cor-texto-claro);
+    align-items: flex-start;
+    grid-area: footer;
+}
+
+footer h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.4;
+}
+
+footer h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--cor-laranja-terra);
+    margin: 0 0 0.5rem 0;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer li {
+    font-size: 13px;
+    margin: 0.25rem 0;
+}
+
+footer div:last-child {
+    margin-left: auto;
+}
+
+/* botões principais usados na página e no banner */
+.botoes.botao1,
+.botao3 {
+    background-color: var(--cor-laranja-terra);
+    color: var(--cor-texto-claro);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.botoes.botao1 {
+    padding: 10px 20px;
+}
+
+.botao3 {
+    padding: 12px 20px;
+}
+
+.botao3:hover {
+    background-color: #a63e1c;
+    transform: translateY(2px);
+}
+
+.fontelaranja {
+    color: var(--cor-laranja-terra);
+}
+
+/* ajustes responsivos para telas médias e menores */
+@media (max-width: 1200px) {
+    .grid-cardapio {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "banner"
+            "cardapio"
+            "menu"
+            "footer";
+    }
+
+    section#menu-ex {
+        margin: 0;
+        padding: 2rem 5%;
+    }
+
+    header#inicio nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+    }
+
+    section.fontebranca {
+        padding: 3rem 4%;
+    }
+}
+
+@media (max-width: 992px) {
+    .grid-cardapio {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    section#cardapio {
+        padding: 1.5rem 3rem 2rem 3rem;
+    }
+
+    section#menu-ex {
+        margin-top: 3rem;
+        padding: 1.75rem 3rem;
+    }
+
+    .categorias-container {
+        gap: 0.75rem;
+    }
+}
+
+/* CSS para celular */
+@media (max-width: 768px) {
+    .grid-cardapio {
+        grid-template-columns: 1fr;
+    }
+
+    header#inicio nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    section.fontebranca {
+        padding: 2.5rem 2rem;
+        min-height: 55vh;
+        align-items: flex-start;
+    }
+
+    section.fontebranca h1 {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+    }
+
+    section.fontebranca p {
+        font-size: 15px;
+        max-width: 100%;
+    }
+
+    .grid-cardapio {
+        gap: 1rem;
+    }
+
+    section#menu-ex {
+        width: auto;
+        margin: 2rem 2rem 0;
+        padding: 1.5rem 1.5rem;
+    }
+
+    .categorias-container {
+        gap: 0.6rem;
+    }
+
+    .categoria-item {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    footer.fontebranca {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.5rem;
+    }
+
+    footer div:last-child {
+        grid-column: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    header#inicio {
+        padding: 1rem 1.5rem;
+    }
+
+    header#inicio h3 {
+        font-size: 24px;
+    }
+
+    header#inicio nav a,
+    .categoria-item,
+    .botoes.botao1,
+    .botao3 {
+        font-size: 13px;
+    }
+
+    section.fontebranca {
+        padding: 2rem 1.25rem;
+        min-height: 50vh;
+    }
+
+    section.fontebranca h1 {
+        font-size: 2.3rem;
+    }
+
+    section#cardapio {
+        padding: 1.5rem 1.5rem 2rem 1.5rem;
+    }
+
+    .card-prato {
+        box-shadow: none;
+    }
+
+    .card-prato-conteudo {
+        padding: 1rem;
+    }
+
+    section#menu-ex {
+        margin: 1.5rem 1.5rem 0;
+        padding: 1.5rem 1rem;
+    }
+
+    .footer-col,
+    .footer-cta {
+        min-width: auto;
+    }
+}

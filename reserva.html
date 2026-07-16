@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Sabores da Terra</title>
+    <link rel="stylesheet" href="main2.css">
+</head>
+
+<body>
+    <header class="fontebranca" id="inicio">
+        <h3> Sabores da Terra </h3>
+        <nav>
+            <a href="index.html"> Início </a>
+            <a href="index.html#sobre">Sobre nós</a>
+            <a href="cardapio.html"> Cardápio </a>
+            <a href="index.html#producaol"> Produção Local</a>
+            <a href="index.html#depoimentos"> Depoimentos </a>
+            <a href="index.html#contato"> Contato </a>
+            <a class="botoes botao1" href="#reserva"> Reserve sua mesa </a>
+        </nav>
+    </header>
+    <section class="fontebranca" id="informacao">
+        <h1>Reserve sua mesa</h1>
+        <p>Escolha a melhor data e horário para viver momentos especiais com a nossa cozinha regional.</p>
+        <div class="cards card-horario">
+            <div class="card-body-horario">
+                <h3>Horários</h3>
+                <p>Terça a Quinta
+                    11h às 14h30 | 18h às 22h</p>
+                <p>Sexta
+                    11h às 15h | 18h às 23h</p>
+                <p>Sábado
+                    11h às 16h | 18h às 23h</p>
+                <p>Domingo
+                    11h às 16h</p>
+                <p class="fontelaranja">Fechado às segundas-feiras.</p>
+            </div>
+        </div>
+    </section>
+    <section id="reserva" class="fontebranca2">
+        <div class="reserva-linha">
+            <div class="cards card-reserva">
+                <div class="card-body-reserva">
+                    <form>
+                        <label for="data">Data</label>
+                        <p>selecione a data</p>
+                        <input id="data" name="data" type="date">
+
+                        <label for="horario">Horário</label>
+                        <p>Escolha o horário</p>
+                        <select id="horario" required>
+                            <option value="">Selecione o horário</option>
+                            <option value="11:00">11h</option>
+                            <option value="18:00">18h</option>
+                        </select>
+
+                        <label for="turno">Número de pessoas</label>
+                        <p>Quantidade de pessoas</p>
+                        <select id="turno" name="turno" required>
+                            <option value="">Selecione</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+
+                        <h3>Seus dados</h3>
+                        <p>Preencha seus dados para entrarmos em contato</p>
+
+                        <label for="nomeC">Nome completo</label>
+                        <input id="nomeC" name="nomeC" type="text" placeholder="Digite seu nome completo">
+
+                        <label for="email">E-mail</label>
+                        <input id="email" name="email" type="email" placeholder="seu@email.com">
+
+                        <label for="numero">Telefone/WhatsApp</label>
+                        <input id="numero" name="numero" type="tel" placeholder="(00) 00000-0000">
+
+                        <label for="observacao">Observações (opcional)</label>
+                        <textarea id="observacao" placeholder="Alguma observação especial? Conte pra gente."></textarea>
+
+                        <h3>Preferências (opcional)</h3>
+                        <label for="restricao">Conte-nos sobre suas preferências ou restrições alimentares</label>
+                        <select id="restricao" name="restricao">
+                            <option>Selecione uma opção</option>
+                            <option value="vegetariano">Vegetariano</option>
+                            <option value="sem_gluten">Sem glúten</option>
+                            <option value="sem_lactose">Sem lactose</option>
+                        </select>
+
+                        <div class="acao-botoes">
+                            <button type="submit" class="botoes botao1" role="button">Confirmar reserva</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <aside class="cards card-resumo-wrapper">
+                <div class="cards card-resumo">
+                    <div class="card-body-resumo">
+                        <h3>Resumo da sua reserva</h3>
+                        <p>Data ---</p>
+                        <p>Horário ---</p>
+                        <p>Pessoas ---</p>
+                        <p>Nome ---</p>
+                        <p>Contato ---</p>
+                        <p>Observações ---</p>
+                    </div>
+                </div>
+                <div class="cards card-confirmacao">
+                    <div class="card-body-confirmacao">
+                        <p>Após confirmar, você receberá uma mensagem de confirmação no WhatsApp ou e-mail.</p>
+                        <p class="texto-destaque-verde">Esperamos você!</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+    <section>
+        <div>
+            <h3>Onde estamos</h3>
+            <ul>
+                <li>Rua das Palmeiras, 123</li>
+                <li>Salvador-BA</li>
+            </ul>
+            <h3> Chegue tranquilo</h3>
+            <p>temos estacionamento no local e acesso para todos.</p>
+            <h3>Fale com a gente</h3>
+            <ul>
+                <li>(84) 99999-9999 </li>
+                <li>contato@saboresdaterra.com</li>
+            </ul>
+
+        </div>
+    </section>
+    <footer class="fontebranca" id="contato">
+        <h2>Sabores que alimentam o corpo, memórias que ficam no coração. </h2>
+        <ul>
+            <h3>Funcionamento</h3>
+            <li>Terça e dormingo </li>
+            <li>11h às 16h | 18h às 23h</li>
+        </ul>
+        <h3>Endereço</h3>
+        <ul>
+            <li>Rua das Palmeiras, 123</li>
+            <li>Currais Novos-RN </li>
+        </ul>
+        <h3>Contato</h3>
+        <ul>
+            <li>(84) 99999-9999 </li>
+            <li>contato@saboresdaterra.com</li>
+        </ul>
+
+    </footer>
+</body>
+
+</html>

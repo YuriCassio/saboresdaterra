@@ -1,0 +1,540 @@
+﻿:root {
+    --cor-fundo-escuro: #2b1221;  /* cores reutilizáveis para tema */
+    --cor-laranja-terra: #c15d1d; /* cor de destaque para botões */
+    --cor-verde-oliva: #3f4e39;   /* fundo dos cards laterais */
+    --cor-fundo-creme: #f5ece1;   /* cor de fundo suave da página */
+    --cor-texto-claro: #ffffff;   /* texto em fundos escuros */
+    --cor-texto-escuro: #2e2218;  /* texto principal em fundos claros */
+    --cor-texto-suave: #574e46;   /* texto secundário e descrições */
+    --cor-borda-input: rgba(46, 34, 24, 0.15); /* borda suave dos campos */
+}
+
+* {
+    box-sizing: border-box; /* inclui padding e borda na largura total */
+}
+
+/* estilo base do documento: fundos, tipografia e reset de margens */
+body {
+    background-color: var(--cor-fundo-creme); /* fundo uniforme */
+    font-family: 'Inter', sans-serif; /* fonte moderna e legível */
+    color: var(--cor-texto-escuro); /* cor principal do texto */
+    margin: 0;
+    padding: 0;
+}
+
+/* header: topo fixo com navegação */
+header#inicio {
+    background-color: var(--cor-fundo-escuro);
+    padding: 20px 8%;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    width: 100%; 
+    position: relative;
+    z-index: 10;
+}
+
+/* marca do site no topo da página */
+header#inicio h3 {
+    color: var(--cor-texto-claro);
+    font-family: 'Playfair Display', serif; 
+    margin: 0;
+    font-size: 32px;
+}
+
+/* navegação principal com espaçamento entre links e alinhamento horizontal */
+header#inicio nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+header#inicio nav a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 14px;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+header#inicio nav a:first-child {
+    border-bottom: 2px solid var(--cor-laranja-terra); /* item ativo */
+    padding-bottom: 4px;
+}
+
+/* botão de ação destacado para reserva */
+.botoes.botao1 {
+    background-color: var(--cor-laranja-terra);
+    color: var(--cor-texto-claro);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.botoes.botao1:hover {
+    background-color: #a63e1c; /* efeito hover no botão */
+    transform: translateY(2px);
+}
+
+/* banner principal e card de horários */
+/* área principal de informação com texto à esquerda e card de horários à direita */
+#informacao {
+    background-image: url('foto reserva sua mesa.png');
+    background-position: center;
+    background-size: cover;
+    padding: 80px 8%;
+    display: grid;
+    grid-template-columns: 1fr auto; 
+    grid-template-areas:
+        "titulo card"
+        "texto  card";
+    column-gap: 20px;
+    align-content: center;
+}
+
+#informacao h1 {
+    grid-area: titulo;
+    font-family: 'Playfair Display', serif;
+    font-size: 72px; /* Aumentado para dar o mesmo destaque da imagem de referência */
+    color: var(--cor-texto-claro);
+    margin: 0 0 15px 0;
+    font-weight: bold;
+    line-height: 1.1; /* Deixa as duas linhas do título mais juntas */
+    max-width: 350px; /* Força a quebra de linha logo após a palavra "Reserve" */
+    align-self: end; /* Empurra o título para colar no parágrafo */
+}
+
+#informacao p {
+    grid-area: texto;
+    font-size: 16px;
+    color: #f1e9e3;
+    max-width: 460px;
+    line-height: 1.6;
+    margin: 0;
+    align-self: start; /* Fixa o parágrafo logo abaixo do título */
+}
+
+/* card de horários com visual destacado e bordas suaves */
+.card-horario {
+    background-color: var(--cor-verde-oliva);
+    border-radius: 12px;
+    padding: 30px;
+    width: 380px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card-body-horario h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--cor-texto-claro);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 12px;
+    margin: 0 0 15px 0;
+}
+
+/* textos do card de horários com espaçamento e divisão visual entre linhas */
+.card-body-horario p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #eae3d9;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+}
+
+.card-body-horario p:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.card-body-horario p.fontelaranja {
+    color: var(--cor-laranja-terra) !important; /* aviso laranja para destaque */
+    font-weight: bold;
+}
+
+/* seção de reserva com duas colunas */
+#reserva {
+    display: flex; /* centraliza o conteúdo principal na página */
+    justify-content: center;
+    padding: 60px 8%;
+    background-color: var(--cor-fundo-creme);
+}
+
+.reserva-linha {
+    display: flex; /* mantém o formulário e o resumo lado a lado */
+    justify-content: space-between;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    align-items: flex-start;
+}
+
+.card-reserva {
+    flex: 1;
+    min-width: 0;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.card-body-reserva form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* três colunas para campos iniciais */
+    gap: 15px;
+}
+
+.card-body-reserva h3 {
+    grid-column: span 3;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--cor-texto-escuro);
+    margin: 25px 0 5px 0;
+    border-top: 1px solid rgba(46, 34, 24, 0.1);
+    padding-top: 25px;
+}
+
+.card-body-reserva h3 + p {
+    grid-column: span 3;
+    font-size: 13px;
+    color: var(--cor-texto-suave);
+    margin: 0 0 15px 0;
+}
+
+.card-body-reserva label {
+    grid-column: span 3;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--cor-texto-escuro);
+    margin-bottom: -10px;
+}
+
+.card-body-reserva label + p {
+    grid-column: span 3;
+    font-size: 12px;
+    color: var(--cor-texto-suave);
+    margin: 0 0 -5px 0;
+}
+
+/* estilo padrão dos campos do formulário para aparência consistente */
+.card-body-reserva input,
+.card-body-reserva select,
+.card-body-reserva textarea {
+    grid-column: span 3;
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--cor-borda-input);
+    border-radius: 6px;
+    background-color: #faf6f0;
+    font-size: 14px;
+    color: var(--cor-texto-escuro);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.card-body-reserva input:focus,
+.card-body-reserva select:focus,
+.card-body-reserva textarea:focus {
+    border-color: var(--cor-laranja-terra);
+}
+
+/* campos iniciais lado a lado */
+.card-body-reserva label[for="data"],
+.card-body-reserva label[for="data"] + p,
+.card-body-reserva input[type="date"] {
+    grid-column: span 1;
+}
+
+.card-body-reserva label[for="horario"],
+.card-body-reserva label[for="horario"] + p,
+.card-body-reserva select#horario {
+    grid-column: span 1;
+}
+
+.card-body-reserva label[for="turno"],
+.card-body-reserva label[for="turno"] + p,
+.card-body-reserva select#turno {
+    grid-column: span 1;
+}
+
+/* nome ocupa toda largura */
+.card-body-reserva label[for="nomeC"],
+.card-body-reserva label[for="nomeC"] + p,
+.card-body-reserva input#nomeC {
+    grid-column: span 3;
+}
+
+.card-body-reserva label[for="email"],
+.card-body-reserva input#email {
+    grid-column: span 1.5;
+}
+
+.card-body-reserva label[for="numero"],
+.card-body-reserva input#numero {
+    grid-column: span 1.5;
+}
+
+.card-body-reserva textarea {
+    height: 100px;
+    resize: none;
+}
+
+.card-body-reserva + div {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.card-body-reserva + div button {
+    background-color: var(--cor-laranja-terra);
+    color: #ffffff;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 14px 40px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* painel de resumo fixo à direita */
+.card-resumo-wrapper {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 320px;
+    /* mantém o resumo alinhado e com largura estável */
+}
+
+.card-resumo {
+    background-color: var(--cor-verde-oliva);
+    border-radius: 12px;
+    padding: 30px;
+    color: #ffffff;
+}
+
+.card-body-resumo h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--cor-laranja-terra);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 12px;
+    margin: 0 0 20px 0;
+}
+
+.card-body-resumo p {
+    font-size: 14px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.card-confirmacao {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    text-align: center;
+}
+
+.card-body-confirmacao p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--cor-texto-suave);
+    margin: 0 0 10px 0;
+}
+
+.card-body-confirmacao .texto-destaque-verde {
+    color: var(--cor-verde-oliva);
+    font-weight: bold;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* bloco de informações adicionais abaixo da reserva */
+#reserva + section {
+    background-color: #ffffff;
+    padding: 50px 8%;
+    border-top: 1px solid rgba(46, 34, 24, 0.08);
+}
+
+#reserva + section > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+#reserva + section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--cor-texto-escuro);
+    margin: 0 0 12px 0;
+}
+
+#reserva + section p,
+#reserva + section li {
+    font-size: 13px;
+    color: var(--cor-texto-suave);
+    line-height: 1.6;
+}
+
+#reserva + section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#reserva + section > div > h3,
+#reserva + section > div > p,
+#reserva + section > div > ul {
+    flex: 1;
+}
+
+footer.fontebranca {
+    background-color: #1f111a;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 1.25rem 4%;
+    color: var(--cor-texto-claro);
+    align-items: flex-start;
+    grid-area: footer;
+}
+
+footer h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.4;
+}
+
+footer h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--cor-laranja-terra);
+    margin: 0 0 0.5rem 0;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer li {
+    font-size: 13px;
+    margin: 0.25rem 0;
+}
+
+footer div:last-child {
+    margin-left: auto;
+}
+
+@media (max-width: 1180px) {
+    /* ajuste leve para telas menores sem quebrar o layout */
+    #reserva {
+        padding: 60px 6%;
+    }
+
+    .reserva-linha {
+        gap: 28px;
+    }
+
+    .card-resumo-wrapper {
+        width: 320px;
+        min-width: 280px;
+    }
+
+    .card-reserva {
+        padding: 34px;
+    }
+}
+
+@media (max-width: 1080px) {
+    /* reorganiza o formulário em duas colunas para tablets */
+    .card-body-reserva form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card-body-reserva label[for="data"],
+    .card-body-reserva label[for="horario"],
+    .card-body-reserva label[for="turno"],
+    .card-body-reserva input[type="date"],
+    .card-body-reserva select#horario,
+    .card-body-reserva select#turno {
+        grid-column: span 1;
+    }
+
+    .card-body-reserva label[for="email"],
+    .card-body-reserva input#email,
+    .card-body-reserva label[for="numero"],
+    .card-body-reserva input#numero {
+        grid-column: span 1;
+    }
+
+    .card-body-reserva label[for="nomeC"],
+    .card-body-reserva label[for="nomeC"] + p,
+    .card-body-reserva input#nomeC,
+    .card-body-reserva label[for="observacao"],
+    .card-body-reserva textarea,
+    .card-body-reserva label[for="restricao"],
+    .card-body-reserva select#restricao,
+    .card-body-reserva .acao-botoes {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 960px) {
+    #informacao {
+        flex-direction: column;
+        padding: 60px 6%;
+    }
+
+    .card-horario {
+        width: 100%;
+    }
+
+    #reserva {
+        padding: 40px 6%;
+    }
+
+    .reserva-linha {
+        flex-direction: column;
+    }
+
+    .card-body-reserva form {
+        grid-template-columns: 1fr;
+    }
+
+    .card-body-reserva label[for="data"],
+    .card-body-reserva input[type="date"],
+    .card-body-reserva label[for="horario"],
+    .card-body-reserva select#horario,
+    .card-body-reserva label[for="turno"],
+    .card-body-reserva select#turno {
+        grid-column: span 3;
+    }
+
+    .card-resumo-wrapper {
+        width: 100%;
+    }
+
+    #reserva + section > div {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    footer#contato {
+        flex-direction: column;
+        gap: 30px;
+    }
+}

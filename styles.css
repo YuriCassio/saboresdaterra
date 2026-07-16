@@ -1,0 +1,511 @@
+/* define o modelo de caixa para incluir bordas e padding no tamanho total */
+* {
+  box-sizing: border-box;
+}
+
+/* estilos globais do corpo: fundo, cor do texto e tipografia */
+body {
+  margin: 0;
+  background-color: #f4f7d5;
+  color: #1f2937;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* variáveis de cor reutilizáveis em todo o site */
+:root {
+  --cor-fundo-escuro: #1f111a;  
+  --cor-fundo-claro: #f5ebe1;
+  --cor-verde-oliva: #5a6642;   
+  --cor-laranja-terra: #c75627;  
+  --cor-texto-claro: #ffffff;   
+}
+
+/* estilo do cabeçalho principal e posicionamento da navegação */
+header#inicio {
+    background-color: var(--cor-fundo-escuro);
+    padding: 20px 5%;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    width: 100%; 
+    position: relative;
+}
+
+header#inicio h3 {
+    color: var(--cor-texto-claro);
+    font-family: 'Playfair Display', serif; 
+    margin: 0;
+    font-size: 32px;
+    
+}
+
+
+header#inicio nav {
+    display: flex;
+    gap: 20px; 
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+header#inicio nav a {
+    color: var(--cor-texto-claro);
+    text-decoration: none; 
+    font-family: sans-serif;
+    font-size: 14px;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+/* destaque no link ativo do menu */
+header#inicio nav a:first-child {
+    border-bottom: 2px solid var(--cor-laranja-terra);
+    padding-bottom: 4px;
+}
+
+/* estilo dos botões de ação padrão */
+.botoes.botao1{
+    background-color: var(--cor-laranja-terra);
+    color: var(--cor-texto-claro);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.botoes.botao1:hover {
+    background-color: #a63e1c; 
+    transform: translateY(2px);
+}
+
+/* seção de introdução com imagem de fundo e gradiente escuro */
+.fontebranca2{
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url('Sabores da Terra.png');
+    background-size: cover;        
+    background-position: center left; 
+    min-height: 80vh;              
+    display: flex;
+    flex-direction: column;        
+    justify-content: center;       
+    align-items: flex-start;       
+    padding-left: 8%;
+    padding-right: 5%;
+}
+
+/* título principal do banner com tamanho responsivo */
+section.fontebranca2 h1 {
+    font-family: 'Playfair Display', serif; 
+    font-size: clamp(45px, 6vw, 80px); 
+    line-height: 1.1;                
+    margin-bottom: 15px;
+    max-width: 550px;              
+    color: var(--cor-texto-claro);
+    text-align: left;            
+}
+
+section.fontebranca2 p {
+    font-size: 24px;
+    font-size: clamp(18px, 2vw, 24px); 
+    color: var(--cor-laranja-terra); 
+    margin-bottom: 30px;
+    font-family: sans-serif;
+    text-align: left;
+}
+
+.botoes.botaO2 {
+    background-color: var(--cor-verde-oliva); 
+    color: var(--cor-texto-claro);            
+    padding: 12px 28px;                       
+    border-radius: 5px;                       
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;                    
+    width: fit-content;                       
+    cursor: pointer;                          
+    transition: background-color 0.3s, transform 0.2s; 
+    margin-top: 15px;                         
+}
+
+.botoes.botaO2:hover {
+    background-color: #434d31;               
+    transform: scale(1.03);                   
+}
+
+/* seção sobre nós com layout em colunas */
+#sobre {
+    background-color: var(--cor-fundo-claro);
+    padding: 50px 5%; 
+    display: flex;
+    gap: 40px;
+    align-items: flex-start; 
+}
+
+
+.coluna-historia {
+    display: flex;
+    gap: 20px;
+    width: 45%; 
+}
+
+.img-restaurante {
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.texto-historia h2, .coluna-pratos h2 {
+    color: var(--cor-fundo-escuro);
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.texto-historia p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4b5563;
+    margin-bottom: 15px;
+}
+
+.texto-destaque-verde {
+    color: var(--cor-verde-oliva) ;
+    font-weight: bold;
+    font-size: 16px ;
+}
+
+
+.coluna-pratos {
+    width: 55%;
+}
+
+/* grade horizontal de cards de pratos */
+.grid-pratos {
+    display: flex;
+    gap: 15px;
+}
+
+/* card individual de prato com sombra e bordas arredondadas */
+.card-prato {
+    background-color: #fff;
+    border-radius: 10px;
+    padding-bottom: 15px;
+    text-align: center;
+    width: 25%; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.card-prato img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 10px;
+}
+
+.card-prato h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    margin: 0 5px 5px 5px;
+    color: var(--cor-fundo-escuro);
+}
+
+.card-prato p {
+    font-size: 12px;
+    margin: 0 10px;
+    color: #6b7280;
+}
+
+/* seção de produção local com fundo verde e cards informativos */
+#producaol {
+    background-color: var(--cor-verde-oliva); 
+    padding: 30px 5%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.titulo-producao h2 {
+    color: var(--cor-texto-claro);
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    line-height: 1.2;
+    margin: 0;
+    min-width: 200px;
+}
+
+.itens-producao {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.item {
+    color: var(--cor-texto-claro);
+    text-align: left;
+    flex: 1;
+}
+
+.item h3 {
+    font-size: 15px;
+    margin: 0 0 5px 0;
+}
+
+.item p {
+    font-size: 12px;
+    margin: 0;
+    opacity: 0.9;
+}
+
+section#depoimentos {
+    background-color: var(--cor-fundo-claro);
+    padding: 50px 5%;
+}
+
+section#depoimentos h1 {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.depoimentos-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+}
+
+.depoimento-item {
+    padding: 24px;
+    max-width: 320px;
+}
+
+.depoimento-item p {
+    margin: 0;
+    color: #1f2937;
+}
+
+.depoimento-item p.texto-destaque-verde {
+    margin-top: 16px;
+    font-weight: bold;
+    color: var(--cor-verde-oliva);
+}
+
+/* bloco de chamada para ação de reserva */
+#reservas {
+    background-color: var(--cor-laranja-terra);
+    padding: 80px 10%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#reservas h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 45px);
+    color: var(--cor-texto-claro);
+    margin-bottom: 15px;
+}
+
+#reservas p.fontebranca {
+    font-size: 18px;
+    color: #d1d5db; 
+    max-width: 600px;
+    margin-bottom: 35px;
+    line-height: 1.6;
+}
+
+
+.botoes.botao3 {
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-texto-escuro);
+    padding: 15px 35px;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.botoes.botao3:hover {
+    background-color: #7cc57c;
+    transform: translateY(-2px);
+}
+
+/* rodapé com informações de contato e links secundários */
+footer#contato {
+    background-color: var(--cor-fundo-escuro); 
+    padding: 60px 5%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 40px;
+}
+
+
+footer#contato > h2 {
+    color: #ffffff;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    line-height: 1.4;
+    margin: 0;
+    max-width: 35%; 
+    font-weight: normal;
+}
+
+
+footer#contato > h3, 
+footer#contato > ul {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    min-width: 150px; 
+}
+
+
+footer#contato h3 {
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 16px;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+
+footer#contato ul h3 {
+    display: block;
+    margin-bottom: 12px;
+}
+
+
+footer#contato li {
+    color: #e5e7eb;
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 6px;
+}
+
+
+
+/* responsividade para telas menores: ajusta o footer e o layout geral */
+@media (max-width: 768px) {
+    footer#contato {
+        flex-direction: column; /* Empilha tudo na vertical no celular */
+        gap: 30px;
+    }
+    
+    footer#contato > h2 {
+        max-width: 100%;
+    }
+    
+    footer#contato > h3, 
+    footer#contato > ul {
+        display: block;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    header#inicio {
+        flex-direction: column; 
+        gap: 15px;
+        padding: 15px 5%;
+        text-align: center;
+    }
+
+    header#inicio h3 {
+        font-size: 26px; 
+    }
+
+    header#inicio nav {
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 12px;
+    }
+
+    header#inicio nav a {
+        font-size: 13px; 
+    }
+    
+    
+    .botoes.botao1 {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    
+    #sobre, #producaol {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+        padding: 40px 5%;
+    }
+
+    
+    .coluna-historia {
+        flex-direction: column; 
+        align-items: center;
+        width: 100%;
+    }
+
+    .img-restaurante {
+        width: 100%;
+        max-width: 320px; 
+        height: 240px; 
+    }
+
+    
+    .coluna-pratos {
+        width: 100%;
+    }
+
+    
+    .grid-pratos {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .card-prato {
+        width: calc(50% - 10px); 
+        min-width: 140px;
+    }
+
+    
+    .titulo-producao h2 {
+        min-width: unset;
+        text-align: center;
+    }
+
+    .itens-producao {
+        flex-direction: column; 
+        gap: 25px;
+    }
+
+    .item {
+        text-align: center;
+    }
+
+    #reservas { padding: 50px 5%; }
+    #reservas p.fontebranca { font-size: 15px; margin-bottom: 25px; }
+}

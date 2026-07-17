@@ -10,6 +10,13 @@ body {
   color: #1f2937;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.icone{
+    font-size:40px;
+    color:#d5a253;
+    margin-bottom:15px;
+}
+
 /* variáveis de cor reutilizáveis em todo o site */
 :root {
   --cor-fundo-escuro: #1f111a;  
@@ -26,8 +33,10 @@ header#inicio {
     display: flex;
     align-items: center; 
     justify-content: space-between; 
+    gap: 16px;
     width: 100%; 
     position: relative;
+    flex-wrap: wrap;
 }
 
 header#inicio h3 {
@@ -43,7 +52,8 @@ header#inicio nav {
     display: flex;
     gap: 20px; 
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 header#inicio nav a {
@@ -53,6 +63,9 @@ header#inicio nav a {
     font-size: 14px;
     transition: color 0.3s;
     white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 /* destaque no link ativo do menu */
@@ -79,9 +92,21 @@ header#inicio nav a:first-child {
     transform: translateY(2px);
 }
 
+.botoes.botao1 i,
+.botoes.botaO2 i,
+.botoes.botao3 i {
+    margin-right: 8px;
+}
+
+.section-title-icon {
+    color: var(--cor-laranja-terra);
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
 /* seção de introdução com imagem de fundo e gradiente escuro */
 .fontebranca2{
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url('imagens/Sabores da Terra.png');
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url('../imagens/Sabores da Terra.png');
     background-size: cover;        
     background-position: center left; 
     min-height: 80vh;              

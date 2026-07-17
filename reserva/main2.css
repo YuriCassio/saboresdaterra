@@ -1,16 +1,16 @@
 ﻿:root {
-    --cor-fundo-escuro: #2b1221;  /* cores reutilizáveis para tema */
-    --cor-laranja-terra: #c15d1d; /* cor de destaque para botões */
-    --cor-verde-oliva: #3f4e39;   /* fundo dos cards laterais */
-    --cor-fundo-creme: #f5ece1;   /* cor de fundo suave da página */
-    --cor-texto-claro: #ffffff;   /* texto em fundos escuros */
-    --cor-texto-escuro: #2e2218;  /* texto principal em fundos claros */
-    --cor-texto-suave: #574e46;   /* texto secundário e descrições */
-    --cor-borda-input: rgba(46, 34, 24, 0.15); /* borda suave dos campos */
+    --cor-fundo-escuro: #2b1221;  
+    --cor-laranja-terra: #c15d1d; 
+    --cor-verde-oliva: #3f4e39;   
+    --cor-fundo-creme: #f5ece1;   
+    --cor-texto-claro: #ffffff;  
+    --cor-texto-escuro: #2e2218;  
+    --cor-texto-suave: #574e46;   
+    --cor-borda-input: rgba(46, 34, 24, 0.15); 
 }
 
 * {
-    box-sizing: border-box; /* inclui padding e borda na largura total */
+    box-sizing: border-box; /* padding e borda na largura total */
 }
 
 /* estilo base do documento: fundos, tipografia e reset de margens */
@@ -29,9 +29,11 @@ header#inicio {
     display: flex;
     align-items: center; 
     justify-content: space-between; 
+    gap: 16px;
     width: 100%; 
     position: relative;
     z-index: 10;
+    flex-wrap: wrap;
 }
 
 /* marca do site no topo da página */
@@ -47,7 +49,8 @@ header#inicio nav {
     display: flex;
     gap: 20px;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 header#inicio nav a {
@@ -57,6 +60,9 @@ header#inicio nav a {
     font-size: 14px;
     transition: color 0.3s;
     white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 header#inicio nav a:first-child {
@@ -83,10 +89,20 @@ header#inicio nav a:first-child {
     transform: translateY(2px);
 }
 
+.botoes.botao1 i {
+    margin-right: 8px;
+}
+
+.section-title-icon {
+    color: var(--cor-laranja-terra);
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
 /* banner principal e card de horários */
 /* área principal de informação com texto à esquerda e card de horários à direita */
 #informacao {
-    background-image: url('imagens/foto reserva sua mesa.png');
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.2)), url('../imagens/foto reserva sua mesa.png');
     background-position: center;
     background-size: cover;
     padding: 80px 8%;

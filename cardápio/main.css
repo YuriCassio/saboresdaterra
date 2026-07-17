@@ -33,9 +33,11 @@ header#inicio {
     display: flex;
     align-items: center; 
     justify-content: space-between; 
+    gap: 16px;
     width: 100%; 
     position: relative;
     grid-area: header;
+    flex-wrap: wrap;
 }
 
 header#inicio h3 {
@@ -51,7 +53,8 @@ header#inicio nav {
     display: flex;
     gap: 20px; 
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 header#inicio nav a {
@@ -61,11 +64,25 @@ header#inicio nav a {
     font-size: 14px;
     transition: color 0.3s;
     white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 header#inicio nav a[href="#cardapio"] {
     border-bottom: 2px solid var(--cor-laranja-terra);
     padding-bottom: 4px;
+}
+
+.botoes.botao1 i,
+.botoes.botao3 i {
+    margin-right: 8px;
+}
+
+.section-title-icon {
+    color: var(--cor-laranja-terra);
+    margin-right: 8px;
+    vertical-align: middle;
 }
 
 /* banner principal da página, com imagem de fundo e texto em destaque */

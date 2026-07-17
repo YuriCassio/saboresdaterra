@@ -106,7 +106,7 @@ header#inicio nav a:first-child {
 
 /* seção de introdução com imagem de fundo e gradiente escuro */
 .fontebranca2{
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url('../imagens/Sabores da Terra.png');
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url('imagens/Sabores da Terra.png');
     background-size: cover;        
     background-position: center left; 
     min-height: 80vh;              
@@ -150,7 +150,8 @@ section.fontebranca2 p {
     width: fit-content;                       
     cursor: pointer;                          
     transition: background-color 0.3s, transform 0.2s; 
-    margin-top: 15px;                         
+    margin-top: 15px;
+    text-decoration: none;                         
 }
 
 .botoes.botaO2:hover {

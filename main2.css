@@ -102,7 +102,7 @@ header#inicio nav a:first-child {
 /* banner principal e card de horários */
 /* área principal de informação com texto à esquerda e card de horários à direita */
 #informacao {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.2)), url('../imagens/foto reserva sua mesa.png');
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.2)), url('imagens/foto reserva sua mesa.png');
     background-position: center;
     background-size: cover;
     padding: 80px 8%;
